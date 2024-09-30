@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>House Price Prediction by M Anas Akhtar</h1>
+        <form method="POST" action="/predict">
+            <label for="sqft_living">Square Feet Living:</label>
+            <input type="number" name="sqft_living" step="0.01" required><br><br>
+
+            <label for="bedrooms">Bedrooms:</label>
+            <input type="number" name="bedrooms" required><br><br>
+
+            <label for="bathrooms">Bathrooms:</label>
+            <input type="number" name="bathrooms" step="0.01" required><br><br>
+
+            <label for="floors">Floors:</label>
+            <input type="number" name="floors" step="0.01" required><br><br>
+
+            <label for="sqft_lot">Square Feet Lot:</label>
+            <input type="number" name="sqft_lot" step="0.01" required><br><br>
+
+            <label for="sqft_above">Square Feet Above:</label>
+            <input type="number" name="sqft_above" step="0.01" required><br><br>
+
+            <label for="sqft_basement">Square Feet Basement:</label>
+            <input type="number" name="sqft_basement" step="0.01" required><br><br>
+
+            <button type="submit">Predict Price</button>
+        </form>
+
+        <h2>{{ prediction_text }}</h2>
+    </div>
+</body>
+</html>
